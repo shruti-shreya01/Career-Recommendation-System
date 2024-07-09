@@ -4,7 +4,7 @@ import numpy as np
 
 # Load the scaler and model
 scaler = pickle.load(open("scaler.pkl", 'rb'))
-model = pickle.load(open("model.pkl", 'rb'))  # Ensure this is your trained model
+model = pickle.load(open("label_encoder.pkl", 'rb'))  # Ensure this is your trained model
 
 class_names = ['Lawyer', 'Doctor', 'Government Officer', 'Artist', 'Unknown',
                'Software Engineer', 'Teacher', 'Business Owner', 'Scientist',
