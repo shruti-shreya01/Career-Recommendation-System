@@ -73,5 +73,5 @@ def main():
         for career, prob in recommendations:
             st.write(f"{career}: {prob:.2f}")
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     main()
