@@ -26,9 +26,11 @@ pip install -r requirements.txt
 streamlit run app.py
 
 ```
+## Demo
+
+Check out the live demo: [Career Recommendation System](https://career-recommendation-system-tikpldnushw4oojivxhwc9.streamlit.app/)
 
 ## Usage
-
 
 #### Fill in the form fields with relevant data (gender, scores, etc.).
 #### Click the "Submit" button to see the top career recommendations.
