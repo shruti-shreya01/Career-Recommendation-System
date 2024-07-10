@@ -98,8 +98,10 @@ class_names = ['Lawyer', 'Doctor', 'Government Officer', 'Artist', 'Unknown',
 
 def Recommendations(gender, part_time_job, absence_days, extracurricular_activities,
                     weekly_self_study_hours, math_score, history_score, physics_score,
-                    chemistry_score, biology_score, english_score, geography_score,
-                    total_score, average_score):
+                    chemistry_score, biology_score, english_score, geography_score):
+    # Calculate total_score and average_score
+    total_score = math_score + history_score + physics_score + chemistry_score + biology_score + english_score + geography_score
+    average_score = total_score / 7
     
     # Encode categorical variables
     gender_encoded = 1 if gender.lower() == 'female' else 0
@@ -139,26 +141,26 @@ def main():
         col1, col2 = st.columns(2)
         with col1:
             gender = st.selectbox('Gender:', ('Male', 'Female'))
-            absence_days = st.number_input('Absence Days:')
-            weekly_self_study_hours = st.number_input('Weekly self-study hours:')
-            history_score = st.number_input('History Score:')
-            chemistry_score = st.number_input('Chemistry Score:')
-            english_score = st.number_input('English Score:')
-            total_score = st.number_input('Total Score:')
+            absence_days = st.number_input('Absence Days:', min_value=0, max_value=100, value=0, step=1)
+            weekly_self_study_hours = st.number_input('Weekly self-study hours:', min_value=0, max_value=100, value=0, step=1)
+            history_score = st.number_input('History Score:', min_value=0, max_value=100, value=0, step=0.5)
+            chemistry_score = st.number_input('Chemistry Score:', min_value=0, max_value=100, value=0, step=0.5)
+            english_score = st.number_input('English Score:', min_value=0, max_value=100, value=0, step=0.5)
+            total_score = st.number_input('Total Score:', min_value=0, max_value=100, value=0.00)
         
         with col2:
             part_time_job = st.selectbox('Part-time Job:', ('Yes', 'No'))
             extracurricular_activities = st.selectbox('Extra Curricular Activities:', ('Yes', 'No'))
-            math_score = st.number_input('Maths Score:')
-            biology_score = st.number_input('Biology Score:')
-            physics_score = st.number_input('Physics Score:')
-            geography_score = st.number_input('Geography Score:')
-            average_score = st.number_input('Average Score:')
+            math_score = st.number_input('Maths Score:', min_value=0, max_value=100, value=0, step=0.5)
+            biology_score = st.number_input('Biology Score:', min_value=0, max_value=100, value=0, step=0.5)
+            physics_score = st.number_input('Physics Score:', min_value=0, max_value=100, value=0, step=0.5)
+            geography_score = st.number_input('Geography Score:', min_value=0, max_value=100, value=0, step=0.5)
+            average_score = st.number_input('Average Score:', min_value=0, max_value=100, value=0.00)
 
         submit_button = st.form_submit_button(label='Submit')
 
         if submit_button:
-            st.write("Processing input...")
+            
             recommendations = Recommendations(gender, part_time_job, absence_days, extracurricular_activities,
                                               weekly_self_study_hours, math_score, history_score, physics_score,
                                               chemistry_score, biology_score, english_score, geography_score,
