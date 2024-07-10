@@ -157,17 +157,17 @@ def main():
             gender = st.selectbox('Gender:', ('Male', 'Female'))
             absence_days = st.number_input('Absence Days:', min_value=0, max_value=100, value=0, step=1)
             weekly_self_study_hours = st.number_input('Weekly self-study hours:', min_value=0, max_value=100, value=0, step=1)
-            history_score = st.number_input('History Score:', min_value=0, max_value=100, value=0, step=0.5)
-            chemistry_score = st.number_input('Chemistry Score:', min_value=0, max_value=100, value=0, step=0.5)
-            english_score = st.number_input('English Score:', min_value=0, max_value=100, value=0, step=0.5)
+            history_score = st.number_input('History Score:', min_value=0, max_value=100, value=0.0, step=0.5)
+            chemistry_score = st.number_input('Chemistry Score:', min_value=0, max_value=100, value=0.0, step=0.5)
+            english_score = st.number_input('English Score:', min_value=0, max_value=100, value=0.0, step=0.5)
         
         with col2:
             part_time_job = st.selectbox('Part-time Job:', ('Yes', 'No'))
             extracurricular_activities = st.selectbox('Extra Curricular Activities:', ('Yes', 'No'))
-            math_score = st.number_input('Maths Score:', min_value=0, max_value=100, value=0, step=0.5)
-            biology_score = st.number_input('Biology Score:', min_value=0, max_value=100, value=0, step=0.5)
-            physics_score = st.number_input('Physics Score:', min_value=0, max_value=100, value=0, step=0.5)
-            geography_score = st.number_input('Geography Score:', min_value=0, max_value=100, value=0, step=0.5)
+            math_score = st.number_input('Maths Score:', min_value=0, max_value=100, value=0.0, step=0.5)
+            biology_score = st.number_input('Biology Score:', min_value=0, max_value=100, value=0.0, step=0.5)
+            physics_score = st.number_input('Physics Score:', min_value=0, max_value=100, value=0.0, step=0.5)
+            geography_score = st.number_input('Geography Score:', min_value=0, max_value=100, value=0.0, step=0.5)
 
         submit_button = st.form_submit_button(label='Submit')
 
