@@ -85,7 +85,7 @@ import numpy as np
 # Load the scaler and model
 try:
     scaler = pickle.load(open("scaler.pkl", 'rb'))
-    model = pickle.load(open("label_encoder.pkl", 'rb'))
+    model = pickle.load(open("model.pkl", 'rb'))
 except Exception as e:
     st.error(f"Error loading model or scaler: {e}")
     st.stop()
