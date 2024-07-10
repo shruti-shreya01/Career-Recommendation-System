@@ -160,11 +160,10 @@ def main():
         submit_button = st.form_submit_button(label='Submit')
 
         if submit_button:
-            
+            st.write('Processing Input...')
             recommendations = Recommendations(gender, part_time_job, absence_days, extracurricular_activities,
                                               weekly_self_study_hours, math_score, history_score, physics_score,
-                                              chemistry_score, biology_score, english_score, geography_score,
-                                              total_score, average_score)
+                                              chemistry_score, biology_score, english_score, geography_score)
             st.write("Top Career Recommendations:")
             for career, probability in recommendations:
                 st.write(f"{career}: {probability:.2f}")
